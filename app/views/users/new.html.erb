@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby on Rails</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+  <style type="text/css" media="screen" charset="utf-8">
+      h1 {
+          font-family: 'Yanone Kaffeesatz', sans-serif;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <section class="vh-100">
+    <div class="container align-items-center h-100">
+      <div class="row mx-auto d-flex justify-content-center align-items-center h-100">
+        <h1 class="pt-5 mb-5 mb-lg-0 text-center"> Zapisz się do newslettera, by otrzymywać informacje treningowe </h1>
+        <div class="col-md-9 col-lg-6 col-xl-5 d-flex justify-content-center align-items-center">
+          <%= image_tag('ebook.png', class: "mx-auto shadow p-3 mb-5 bg-white rounded img-fluid max-width: 100%", size: '350') %>
+<!--          <img class="mx-auto shadow p-3 mb-5 bg-white rounded img-fluid max-width: 100%" width="350" height="300" src="../../assets/images/ebook.png"-->
+<!--               class="img-fluid" alt="Sample image">-->
+        </div>
+        <div class="py-4 col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <%= form_with model: @user do |form| %>
+            <div class="form-outline col-12">
+              <%= form.label :email, "Adres e-mail",  class: "form-label" %><br>
+              <%= form.text_field :email, class: "form-control form-control-lg", placeholder: "Twój adres e-mail" %>
+            </div>
+
+            <div class="form-outline col-12">
+              <%= form.label :name, "Imię",  class: "form-label" %><br>
+              <%= form.text_field :name, class: "form-control form-control-lg" , placeholder: "Podaj swoje imię" %>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2 col-12">
+              <%= form.submit 'Zatwierdź', class: "btn btn-secondary btn-lg"%>
+            </div>
+          <% end %>
+            <div class="row col-12">
+              <div class="col-6 pt-4 d-flex justify-content-start align-items-center">
+                <%= image_tag('logo.png', class: "img-fluid max-width: 100%", size: '100') %>
+              </div>
+              <div class="col-6 pt-4 d-flex justify-content-end align-items-center">
+                <%= image_tag('podpis.png', class: "img-fluid max-width: 100%", size: '150') %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
