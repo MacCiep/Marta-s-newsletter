@@ -34,11 +34,17 @@
             <div class="form-outline col-12">
               <%= form.label :email, "Adres e-mail",  class: "form-label" %><br>
               <%= form.text_field :email, class: "form-control form-control-lg", placeholder: "Twój adres e-mail" %>
+              <% @user.errors.full_messages_for(:email).each do |message| %>
+                <div class="alert alert-danger" role="alert"><%= message %></div>
+              <% end %>
             </div>
 
             <div class="form-outline col-12">
               <%= form.label :name, "Imię",  class: "form-label" %><br>
               <%= form.text_field :name, class: "form-control form-control-lg" , placeholder: "Podaj swoje imię" %>
+              <% @user.errors.full_messages_for(:name).each do |message| %>
+                <div class="alert alert-danger" role="alert"><%= message %></div>
+              <% end %>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2 col-12">
